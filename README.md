@@ -4,7 +4,7 @@ A single page application using REST JSON API to call petrol stations and thier 
 
 ## :computer: [Click here]() to see the app!
 
-![screenshot]()
+![screenshot](./client/images/Screenshot%202024-02-15%20at%202.20.40%20pm.png)
 
 # Team Members
 
