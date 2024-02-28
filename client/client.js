@@ -1,5 +1,5 @@
 let map;
-const url = `http://api/stats`
+const url = `/api/stats`
 
 const nearestSection = document.querySelector('.nearest-section')
 const mapCentreLocationSection = document.querySelector('.map-centre-location-section')
@@ -100,7 +100,7 @@ function showCentreAddress(lat, lng) {
 }
 
 function stationMarker() {
-    const url = 'http://api/stations/all'
+    const url = '/stations/all'
 
     fetch(url)
         .then(res => res.json())
@@ -205,7 +205,7 @@ function showTime() {
 }
 
 function getRandomPetrolStation() {
-    const url = 'http://api/stations/random'
+    const url = '/stations/random'
     randomStationInfo.innerHTML = ''
 
     fetch(url)
@@ -318,7 +318,7 @@ function toQueryString(obj) {
 
 function getInBoundStations(coordinates) {
     const queryStr = toQueryString(coordinates)
-    const stationsUrl = `http://api/stations/bounds/${queryStr}`
+    const stationsUrl = `/stations/bounds/${queryStr}`
     fetch(stationsUrl)
         .then(res => res.json())
         .then(stations => {
@@ -371,7 +371,7 @@ function getInBoundStations(coordinates) {
 
 function findNearestStations(lat, lng, radius) {
 
-    const queryStr = `http://api/stations/nearest/?lat=${lat}&lng=${lng}&radius=${radius}`
+    const queryStr = `/stations/nearest/?lat=${lat}&lng=${lng}&radius=${radius}`
 
     fetch(queryStr)
         .then(res => res.json())
