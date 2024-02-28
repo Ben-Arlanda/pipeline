@@ -1,5 +1,5 @@
 let map;
-const url = `http://localhost:8080/api/stats`
+const url = `http://api/stats`
 
 const nearestSection = document.querySelector('.nearest-section')
 const mapCentreLocationSection = document.querySelector('.map-centre-location-section')
@@ -70,28 +70,6 @@ async function initMap(coordinates) {
         animation: google.maps.Animation.DROP,
     })
 
-    // map.addListener('dragend', () => {
-    //     const newCenter = map.getCenter()
-    //     const lat = newCenter.lat()
-    //     const lng = newCenter.lng()
-
-    //     latitudeElem.textContent = `Latitude: ${lat}`
-    //     longitudeElem.textContent = `Longitude: ${lng}`
-
-    //     if (userMarker) {
-    //         userMarker.setMap(null);
-    //     }
-
-    //     userMarker = new google.maps.Marker({
-    //         position: { lat: lat, lng: lng },
-    //         map,
-    //         icon: userIcon,
-    //         draggable: true,
-    //         animation: google.maps.Animation.DROP,
-    //     });
-
-    //     showCentreAddress(lat, lng)
-    // })
 
     const latitudeElem = document.createElement('p')
     const longitudeElem = document.createElement('p')
@@ -122,7 +100,7 @@ function showCentreAddress(lat, lng) {
 }
 
 function stationMarker() {
-    const url = 'http://localhost:8080/api/stations/all'
+    const url = 'http://api/stations/all'
 
     fetch(url)
         .then(res => res.json())
@@ -227,7 +205,7 @@ function showTime() {
 }
 
 function getRandomPetrolStation() {
-    const url = 'http://localhost:8080/api/stations/random'
+    const url = 'http://api/stations/random'
     randomStationInfo.innerHTML = ''
 
     fetch(url)
@@ -340,7 +318,7 @@ function toQueryString(obj) {
 
 function getInBoundStations(coordinates) {
     const queryStr = toQueryString(coordinates)
-    const stationsUrl = `http://localhost:8080/api/stations/bounds/${queryStr}`
+    const stationsUrl = `http://api/stations/bounds/${queryStr}`
     fetch(stationsUrl)
         .then(res => res.json())
         .then(stations => {
@@ -393,7 +371,7 @@ function getInBoundStations(coordinates) {
 
 function findNearestStations(lat, lng, radius) {
 
-    const queryStr = `http://localhost:8080/api/stations/nearest/?lat=${lat}&lng=${lng}&radius=${radius}`
+    const queryStr = `http://api/stations/nearest/?lat=${lat}&lng=${lng}&radius=${radius}`
 
     fetch(queryStr)
         .then(res => res.json())

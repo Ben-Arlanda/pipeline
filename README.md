@@ -1,6 +1,6 @@
 # Servo App
 
-A single page application using REST JSON API to call petrol stations and thier locations. This is displayed using the Google Maps API. 
+A single page application using REST JSON API to call petrol stations and their locations. This is displayed using the Google Maps API. 
 
 ## :computer: [Click here]() to see the app!
 
@@ -37,6 +37,8 @@ A single page application using REST JSON API to call petrol stations and thier 
 
 - Spotlight feature highlights random petrol stations and takes the user to its location. 
 
+
+## :laptop: 
 
 ## :rocket: Technologies used
 
